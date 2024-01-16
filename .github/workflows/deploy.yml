@@ -12,7 +12,7 @@ jobs:
       - name: Publish artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./test/
+          path: ./test
   deployment:
     needs: build
     runs-on: ubuntu-latest
