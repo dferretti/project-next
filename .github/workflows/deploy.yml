@@ -12,10 +12,27 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: project-next/
+
+      - name: svelte build
+        run: npm run build
+        env:
+          GHA_SVELTE_BASE_PATH: '/${{ github.event.repository.name }}'
+
       - name: Publish artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./test
+          path: project-next/build/
+
   deployment:
     needs: build
     runs-on: ubuntu-latest
