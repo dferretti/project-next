@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Publish artifact
         uses: actions/upload-pages-artifact@v2
-        inputs:
+        with:
           path: test/
   deployment:
     needs: build
