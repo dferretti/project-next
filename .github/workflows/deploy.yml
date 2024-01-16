@@ -28,6 +28,7 @@ jobs:
         run: npm run build
         env:
           GHA_SVELTE_BASE_PATH: '/${{ github.event.repository.name }}'
+        working-directory: project-next/
 
       - name: Publish artifact
         uses: actions/upload-pages-artifact@v3
