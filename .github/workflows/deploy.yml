@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: testaasdf
+        run: ls -la
       - name: Publish artifact
         uses: actions/upload-pages-artifact@v2
         with:
