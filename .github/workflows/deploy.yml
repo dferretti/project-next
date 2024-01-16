@@ -9,8 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Git checkout
+        uses: actions/checkout@v4
       - name: testaasdf
-        run: ls -la ../
+        run: ls -la
       - name: Publish artifact
         uses: actions/upload-pages-artifact@v2
         with:
